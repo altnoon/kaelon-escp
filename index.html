@@ -16,7 +16,7 @@
     --purple-soft:#ECE5FB; --purple-wash:#F3EEFC;
     --paper:#F5F4F9; --card:#FFFFFF; --line:#E6E1F1; --line-soft:#EEEAF6;
     --muted:#6A6578; --muted-2:#9892A6;
-    --warn:#B8463C; --warn-soft:#F5E6E3;
+    --orange:#FF6433; --orange-soft:#FFE8DE; --orange-deep:#C0421A;
     --ok:#6631CA;
     --serif:'Fraunces',Georgia,'Times New Roman',serif;
     --sans:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
@@ -246,10 +246,10 @@
   .bounds{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:4px}
   .bound{background:#FBFAFC;border:1px solid var(--line);border-radius:14px;padding:24px 26px;position:relative}
   .bound .x{position:absolute;top:22px;right:22px;width:22px;height:22px;border-radius:50%;
-    background:var(--warn-soft);color:var(--warn);display:flex;align-items:center;justify-content:center;
+    background:var(--orange-soft);color:var(--orange-deep);display:flex;align-items:center;justify-content:center;
     font-size:13px;font-weight:700}
   .bound h3{font-size:18px;color:#46414F;margin-bottom:6px}
-  .bound .why{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--warn);margin-bottom:10px}
+  .bound .why{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-deep);margin-bottom:10px}
   .bound p{font-size:13.5px;color:#615B6B;margin:0}
 
   /* expertise */
@@ -777,7 +777,7 @@
       <div class="map-legend">
         <div class="li"><span class="sw" style="background:#6631CA"></span>White space · we own it</div>
         <div class="li"><span class="sw" style="background:#9A78E8"></span>Warm momentum · co-deliver</div>
-        <div class="li"><span class="sw" style="background:#fff;border:2px solid #B8463C"></span>Avoid · theirs to keep</div>
+        <div class="li"><span class="sw" style="background:#fff;border:2px solid #FF6433"></span>Avoid · theirs to keep</div>
         <div class="li"><span class="sw" style="background:#8A5BEC;box-shadow:0 0 0 3px rgba(138,91,236,.3)"></span>Lead recommendation</div>
       </div>
     </div>
@@ -933,7 +933,7 @@
     // quadrant fills
     svg.appendChild(el('rect',{x:L,y:T,width:cx-L,height:cy-T,fill:'#EDE6FB'}));            // top-left sweet
     svg.appendChild(el('rect',{x:cx,y:T,width:R-cx,height:cy-T,fill:'#F5F1FC'}));           // top-right co
-    svg.appendChild(el('rect',{x:cx,y:cy,width:R-cx,height:B-cy,fill:'#F6EEED'}));          // bottom-right avoid
+    svg.appendChild(el('rect',{x:cx,y:cy,width:R-cx,height:B-cy,fill:'#FAEDE5'}));          // bottom-right avoid
     svg.appendChild(el('rect',{x:L,y:cy,width:cx-L,height:B-cy,fill:'#F4F3F7'}));           // bottom-left low
 
     // axes box
@@ -947,7 +947,7 @@
       'font-family':'Spline Sans Mono','font-size':11.5,'letter-spacing':1.4,'font-weight':600,fill:col});t.textContent=txt;svg.appendChild(t);}
     qc(L+14,T+24,'THE OPENING','#6631CA');
     qc(R-14,T+24,'WARM · CO-DELIVER','#9173D8','end');
-    qc(R-14,B-16,'AVOID · THEIRS','#B8463C','end');
+    qc(R-14,B-16,'AVOID · THEIRS','#C0421A','end');
     qc(L+14,B-16,'LOW PRIORITY','#AAA4B6');
 
     // axis labels
@@ -976,7 +976,7 @@
       if(p.kind==='lead'){ svg.appendChild(el('circle',{cx:X,cy:Y,r:r+5,fill:'rgba(138,91,236,.22)'})); }
       if(p.kind==='flag'){ svg.appendChild(el('circle',{cx:X,cy:Y,r:r+4,fill:'none',stroke:'#5826B0','stroke-width':1.5})); }
       var c=el('circle',{cx:X,cy:Y,r:r,fill:COL[p.kind]});
-      if(p.kind==='avoid'){c.setAttribute('stroke','#B8463C');c.setAttribute('stroke-width','2.2');}
+      if(p.kind==='avoid'){c.setAttribute('stroke','#FF6433');c.setAttribute('stroke-width','2.2');}
       var ttl=el('title');ttl.textContent=p.n;c.appendChild(ttl);
       svg.appendChild(c);
       if(p.num){
